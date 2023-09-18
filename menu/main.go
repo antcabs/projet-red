@@ -32,7 +32,7 @@ func main() {
 	}
 
 	inventory := Inventory{
-		Items: []string{"racket", "", "water"},
+		Items: []string{"racket", "balls", "water"},
 	}
 	for{
 		fmt.Println("Menu:")
