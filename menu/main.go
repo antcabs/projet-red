@@ -27,7 +27,7 @@ func main() {
 		Level: 1,
 		Hp: 50,
 		Power: 1,
-		Speed: 0,
+		Speed: 10,
 		Money: 0,
 	}
 
