@@ -16,7 +16,7 @@ type Merchant struct {
 func main() {
 	menu := []string{"Merchant", "Quitter"}
 	inventaire := []Item{
-		{Name: "Pièces", Price: 100},
+		{Name: "Pièces", Price: 10},
 	}
 	merchant := Merchant{
 		Items: []Item{
