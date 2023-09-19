@@ -15,7 +15,9 @@ type Merchant struct {
 
 func main() {
 	menu := []string{"Merchant", "Quitter"}
-	inventaire := []Item{}
+	inventaire := []Item{
+		{Name: "Pièces", Price: 100},
+	}
 	merchant := Merchant{
 		Items: []Item{
 			{Name: "Eau", Price: 0},
@@ -36,7 +38,7 @@ func main() {
 			fmt.Printf("%d.%s\n",i+1,choix)
 		}
 		var choixMenu int
-		fmt.Print("Select an option: ")
+		fmt.Print("Choisissez une option: ")
 		fmt.Scan(&choixMenu)
 		switch choixMenu {
 		case 1:
@@ -52,11 +54,18 @@ func main() {
 
 		if choixItem > 0 && choixItem <= len(merchant.Items) {
 			itemAchete := merchant.Items[choixItem-1]
+			pieces := getNumberOfCoins(inventaire)
+			if itemAchete.Price <= pieces {
 			inventaire = append(inventaire, itemAchete)
+			inventaire[0].Price -= itemAchete.Price
 			fmt.Printf("Vous avez acheté: %s\n", itemAchete.Name)
+			fmt.Printf("il vous reste %d pièces.\n", inventaire[0].Price)
 		}else{
-			fmt.Println("choix invalide")
+			fmt.Println("Vous nvez pas assez de pièces pour acheter cet item.")
 		}
+	}else{
+		fmt.Println("choix invalide.")
+	}
 	case 2:
 		fmt.Println("Au revoir !")
 		return
@@ -67,4 +76,6 @@ func main() {
 		fmt.Println("")
 		}
 	}
-	
+	func getNumberOfCoins(inventaire[]Item) int {
+	return inventaire[0].Price
+	}
