@@ -19,7 +19,7 @@ type Character struct {
 }
 
 func (c*Character) accesInventory() {
-	fmt.Println("Inventaire de", c.name+":")
+	fmt.Println("Sac  de", c.name+":")
 	for _,item := range c.inventory {
 		fmt.Println(item.name)
 	}
