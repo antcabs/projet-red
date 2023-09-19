@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type Character struct {
+type Character1 struct {
 	Name string
 	Height int
 	Weight int
@@ -14,8 +14,8 @@ type Character struct {
 	Money int
 }
 
-func Init(name string, height int, weight int, haircolor string, level int, hp int,power int, speed int, money int) Character {
-	return Character{
+func Init(name string, height int, weight int, haircolor string, level int, hp int,power int, speed int, money int) Character1 {
+	return Character1{
 		Name: name,
 		Height: height,
 		Weight: weight,
@@ -29,6 +29,6 @@ func Init(name string, height int, weight int, haircolor string, level int, hp i
 }
 
 func main() {
-	character := Init("Gasan", 180, 70, "brun", 1, 50, 1, 10, 0)
-	fmt.Println(character)
+	character1 := Init("Gasan", 180, 70, "brun", 1, 50, 1, 10, 0)
+	fmt.Println(character1)
 }
