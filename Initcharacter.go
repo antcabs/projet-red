@@ -29,6 +29,6 @@ func Init(name string, height int, weight int, haircolor string, level int, hp i
 }
 
 func main() {
-	character1 := Init("Gasan", 180, 70, "brun", 1, 50, 1, 10, 0)
+	character1 := Init("Gasan", 180, 70, "brun", 1, 50, 1, 10, 10)
 	fmt.Println(character1)
 }
