@@ -18,6 +18,9 @@ type Character struct {
 	Damage int
 	IsDead	bool
 	Resurrected bool
+	Racket	string
+	Balls 	string
+	Water	string
 }
 
 type Item struct {
@@ -33,4 +36,12 @@ type Equipement struct {
 	Head string
 	Torso string
 	Feet string
+}
+
+type Inventory struct {
+    Objects []string
+	Racket string
+	Balls string
+	Water string
+	Items [] string
 }
