@@ -23,7 +23,7 @@ func (c *Character) Init(name string, height int, weight int, haircolor string, 
 
 }
 
-func (c *Item) Init(name string, price int) {
+func (c *Teme) Init(name string, price int) {
 	c.Name = name
 	c.Price = price
 }
@@ -41,5 +41,17 @@ func (c *Inventory) Init(objects []string,racket string, water string, balls str
 	c.Balls = balls
 	c.Items = items
 	c.Powerade = powerade
+}
+
+func (c *Personnage) Init(nom string, class string, level int, Hp int) {
+	c.nom = nom
+	c.class = class
+	c.level = level
+	c.Hp = Hp
+}
+
+func (c *Ressources) Init(CarbonRacket int, TitaniumRacket int ) {
+	c.CarbonRacket = CarbonRacket
+	c.TitaniumRacket = TitaniumRacket
 }
 
