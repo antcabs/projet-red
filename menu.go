@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-
-type Inventory struct {
-	Items []string
-}
-
 func menu() {
 	character := Character{
 		Name: "Gasan",
