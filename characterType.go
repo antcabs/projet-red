@@ -43,5 +43,7 @@ type Inventory struct {
 	Racket string
 	Balls string
 	Water string
-	Items [] string
+	Items []string
+	Powerade string
+	
 }
