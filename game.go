@@ -234,7 +234,7 @@ func update() {
 	playerUp, playerDown, playerRight, playerLeft = false, false, false, false
 }
 
-func pong() {
+func ping() {
 	rl.InitWindow(2000, 900, "tt/TennisGame")
 	rl.SetWindowState(rl.FlagVsyncHint)
 
