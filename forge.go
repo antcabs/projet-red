@@ -4,19 +4,6 @@ import (
     "fmt"
 )
 
-type Ressources struct {
-    CarbonRacket   int
-    TitaniumRacket int
-}
-
-type Weapon struct {
-    name  string
-    power int
-}
-
-type Forgeron struct {
-    availableWeapons map[string]int
-}
 
 func NewForgeron() *Forgeron {
     return &Forgeron{
