@@ -11,7 +11,7 @@ type Character struct {
 	Speed     int
 	Money     int
 	Skills []string
-	Items []Item
+	Items []int
 	Class	string
 	Health 	int
 	MaxHealth int
@@ -21,16 +21,23 @@ type Character struct {
 	Racket	string
 	Balls 	string
 	Water	string
+	
 }
 
-type Item struct {
+type Personnage struct {
+	nom string
+	class string
+	level int
+	Hp int
+}
+
+type Teme struct {
 	Name string
 	Price int
 }
 
-type Merchant struct {
-	Items []Item
-}
+
+
 
 type Equipement struct {
 	Head string
@@ -46,4 +53,22 @@ type Inventory struct {
 	Items []string
 	Powerade string
 	
+}
+
+type Ressources struct {
+	CarbonRacket int
+	TitaniumRacket int
+}
+
+type Weapon struct {
+	name string
+	power int
+}
+
+type Forgeron struct {
+	availableWeapons map [string]int
+}
+
+type Player struct {
+	inventory []string
 }
