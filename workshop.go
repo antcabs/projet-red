@@ -7,12 +7,11 @@ import (
 )
 
 const (
-screen2Width = 800
-screen2Height = 400
+
 )
 
 
-func main() {
+func works() {
 	// Initialize the window
 	
 rl.InitWindow(screen2Width, screen2Height, "Shop")
