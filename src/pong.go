@@ -33,21 +33,21 @@ func (paddle *Paddle) Draw() {
 	rl.DrawTexture(paddle.Texture, int32(paddle.X-paddle.Width/2), int32(paddle.Y-paddle.Height/2), rl.White)
 }
 
-func pong() {
-	rl.InitWindow(1060, 650, "tt/TennisGame")
+func main() {
+	rl.InitWindow(750, 600, "TennisGame")
 	rl.SetWindowState(rl.FlagVsyncHint)
 
-	backgroundImage := rl.LoadImage("tt/COURTE.jpg")
+	backgroundImage := rl.LoadImage("COURT1.png")
 	defer rl.UnloadImage(backgroundImage)
 
 	backgroundTexture := rl.LoadTextureFromImage(backgroundImage)
 
-	characterImage := rl.LoadImage("tt/BASIC.png")
+	characterImage := rl.LoadImage("BASIC.png")
 	defer rl.UnloadImage(characterImage)
 
 	characterTexture := rl.LoadTextureFromImage(characterImage)
 
-	hitSound := rl.LoadSound("tt/son.wav")
+	hitSound := rl.LoadSound("son.wav")
 	defer rl.UnloadSound(hitSound)
 
 	ball := Ball{
@@ -59,74 +59,81 @@ func pong() {
 	}
 
 	leftPaddle := Paddle{
-		X:       50,
-		Y:       float32(rl.GetScreenHeight()) / 2,
-		Width:   10,
-		Height:  100,
+		X:       float32(rl.GetScreenWidth()) / 2,
+		Y:       50,
+		Width:   100,
+		Height:  10,
 		Speed:   500,
 		Texture: characterTexture,
 	}
 
 	rightPaddle := Paddle{
-		X:       float32(rl.GetScreenWidth()) - 50,
-		Y:       float32(rl.GetScreenHeight()) / 2,
-		Width:   10,
-		Height:  100,
+		X:       float32(rl.GetScreenWidth()) / 2,
+		Y:       float32(rl.GetScreenHeight()) - 50,
+		Width:   100,
+		Height:  10,
 		Speed:   500,
 		Texture: characterTexture,
 	}
 
 	var winnerText string
 	var scorePlayer1, scorePlayer2 int
-	const maxScore = 10
+	const maxScore = 20
 
 	for !rl.WindowShouldClose() {
 		ball.X += ball.SpeedX * rl.GetFrameTime()
 		ball.Y += ball.SpeedY * rl.GetFrameTime()
 
-		if ball.Y < 0 {
-			ball.Y = 0
-			ball.SpeedY *= -1
+		if ball.X < 0 {
+			ball.X = 0
+			ball.SpeedX *= -1
 		}
-		if ball.Y > float32(rl.GetScreenHeight()) {
-			ball.Y = float32(rl.GetScreenHeight())
-			ball.SpeedY *= -1
+		if ball.X > float32(rl.GetScreenWidth()) {
+			ball.X = float32(rl.GetScreenWidth())
+			ball.SpeedX *= -1
 		}
 
-		if leftPaddle.Y < ball.Y {
-			leftPaddle.Y += leftPaddle.Speed * rl.GetFrameTime()
+		if leftPaddle.X < ball.X {
+			leftPaddle.X += leftPaddle.Speed * rl.GetFrameTime()
 		} else {
-			leftPaddle.Y -= leftPaddle.Speed * rl.GetFrameTime()
+			leftPaddle.X -= leftPaddle.Speed * rl.GetFrameTime()
 		}
-
-		if rl.IsKeyDown(rl.KeyUp) {
+		// Player controls for the right paddle
+		if rl.IsKeyDown(rl.KeyUp) && rightPaddle.Y > 0 {
 			rightPaddle.Y -= rightPaddle.Speed * rl.GetFrameTime()
 		}
-		if rl.IsKeyDown(rl.KeyDown) {
+		if rl.IsKeyDown(rl.KeyDown) && rightPaddle.Y < float32(rl.GetScreenHeight()) {
 			rightPaddle.Y += rightPaddle.Speed * rl.GetFrameTime()
+		}
+		if rl.IsKeyDown(rl.KeyLeft) && rightPaddle.X > 0 {
+			rightPaddle.X -= rightPaddle.Speed * rl.GetFrameTime()
+		}
+		if rl.IsKeyDown(rl.KeyRight) && rightPaddle.X < float32(rl.GetScreenWidth())-rightPaddle.Width {
+			rightPaddle.X += rightPaddle.Speed * rl.GetFrameTime()
+
 		}
 
 		if rl.CheckCollisionCircleRec(rl.NewVector2(ball.X, ball.Y), ball.Radius, leftPaddle.GetRect()) {
-			if ball.SpeedX < 0 {
-				ball.SpeedX *= -1.1
-				ball.SpeedY = (ball.Y - leftPaddle.Y) / (leftPaddle.Height / 2) * ball.SpeedX
+			if ball.SpeedY < 0 {
+				ball.SpeedY *= -1.1
+				ball.SpeedX = (ball.X - leftPaddle.X) / (leftPaddle.Width / 2) * ball.SpeedY
 				rl.PlaySound(hitSound)
 			}
 		}
 
 		if rl.CheckCollisionCircleRec(rl.NewVector2(ball.X, ball.Y), ball.Radius, rightPaddle.GetRect()) {
-			if ball.SpeedX > 0 {
-				ball.SpeedX *= -1.1
-				ball.SpeedY = (ball.Y - rightPaddle.Y) / (rightPaddle.Height / 2) * -ball.SpeedX
+			if ball.SpeedY > 0 {
+				ball.SpeedY *= -1.1
+				ball.SpeedX = (ball.X - rightPaddle.X) / (rightPaddle.Width / 2) * -ball.SpeedY
 				rl.PlaySound(hitSound)
 			}
 		}
 
-		if ball.X < 0 {
+		if ball.Y < 0 {
 			scorePlayer2++
 			resetBall(&ball)
 		}
-		if ball.X > float32(rl.GetScreenWidth()) {
+		if ball.Y > float32(rl.GetScreenHeight()) {
 			scorePlayer1++
 			resetBall(&ball)
 		}
@@ -174,3 +181,7 @@ func resetBall(ball *Ball) {
 	ball.SpeedX = 300
 	ball.SpeedY = 300
 }
+
+
+
+
