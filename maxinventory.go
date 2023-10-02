@@ -4,9 +4,7 @@ import "fmt"
 
 const maxInventoryCapacity = 10
 
-type Player struct {
-    inventory []string
-}
+
 
 func addItemToInventory(player *Player, item string) string {
     if len(player.inventory) < maxInventoryCapacity {
