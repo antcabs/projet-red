@@ -53,7 +53,7 @@ func init() {
 
 }
 
-func update() {
+func upt() {
 	dx := 2.0
 
 	if collision := playerObj.Check(dx, 0); collision != nil {
