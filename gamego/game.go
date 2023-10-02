@@ -457,6 +457,6 @@ func main() {
 		imput()
 		update()
 		ren()
-		pong()
+		
 	}
 }
