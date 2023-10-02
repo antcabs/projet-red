@@ -7,13 +7,7 @@ import (
 
 )
 
-type Personnage struct {
-	nom string
-	class string
-	level int
-	Hp int
 
-}
 
 func creation() Personnage{
 	var perso Personnage
