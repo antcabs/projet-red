@@ -13,7 +13,8 @@ type Merchant struct {
 	Items []Item
 }
 
-func main() {
+
+func mer() {
 	menu := []string{"Merchant", "Quitter"}
 	inventaire := []Item{
 		{Name: "Pièces", Price: 10},
@@ -29,6 +30,7 @@ func main() {
 			{Name:"Diamont racket", Price: 200},
 			{Name:"Red Powerade", Price: 10},
 			{Name:"blue Powerade", Price: 10},
+			
 		},
 	}
 
