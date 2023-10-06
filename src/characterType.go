@@ -1,5 +1,8 @@
 package main
 
+
+	//Nousa ons nos différentes structures qui sont appellé tout au long de notre code
+
 type Character struct {
 	Name      string
 	Height    int

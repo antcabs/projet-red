@@ -15,7 +15,7 @@ type Merchant struct {
 
 
 func mer() {
-	menu := []string{"Bienvenue chez ynovshop je"}
+	menu := []string{"Bienvenue chez ynovshop !"}
 	inventaire := []Item{
 		{Name: "Pièces", Price: 10},
 	}
@@ -40,7 +40,7 @@ func mer() {
 			fmt.Printf("%d.%s\n",i+1,choix)
 		}
 		var choixMenu int
-		fmt.Print("Choisissez une option: ")
+		fmt.Print("Appuyer sur 1 pour acheter / 2 pour quitter")
 		fmt.Scan(&choixMenu)
 		switch choixMenu {
 		case 1:

@@ -8,7 +8,7 @@ func AccessInventory(inventory []string) {
         fmt.Println(item)
     }
 }
-
+    //menu permettant de selectionner 3 choix renvoyant vers des fonctions
 func ReturnToMenu() {
     fmt.Println("Retour au menu principale")
 }
@@ -22,7 +22,7 @@ func Invent() {
 
     var choice int
     fmt.Scanln(&choice)
-
+    //on appuie sur 1, 2 ou 3 pour seletionner si on va jouer, aller dans l inventaire ou quitter le jeu
     switch choice {
     case 1:
         fmt.Println("Bienvenue à Ynov Garros")

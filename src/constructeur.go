@@ -1,5 +1,8 @@
 package main
 
+
+	//création de pointure sur nos variable de notre structure
+
 func (c *Character) Init(name string, height int, weight int, haircolor string, level int, hp int, power int, speed int, money int, skills [] string, class string, health int, maxHealth int, damage int, isDead bool, resurrected bool, racket string, water string, balls string) {
 	c.Name = name
 	c.Height = height

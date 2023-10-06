@@ -4,7 +4,7 @@ import (
     "fmt"
 )
 
-
+//liste de nos différents objects a acheté
 func NewForgeron() *Forgeron {
     return &Forgeron{
         availableWeapons: map[string]int{
@@ -29,7 +29,7 @@ func (f *Forgeron) FabriquerArme(ressources Ressources, arme string) (Weapon, er
             ressources.CarbonRacket -= 5
             ressources.TitaniumRacket -= 3
 
-            return Weapon{name: arme, power: power}, nil
+            return Weapon{name: arme, power: power}, nil    //condition en si permettant de savoir si nous possédont assez de pièces
         } else {
             return Weapon{}, fmt.Errorf("Items insuffisants pour fabriquer %s", arme)
         }

@@ -8,7 +8,7 @@ import (
 )
 
 
-
+//selection de notre class 
 func creation() Personnage{
 	var perso Personnage
 

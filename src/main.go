@@ -4,64 +4,63 @@ import (
     "fmt"
 )
 
-func actionA() {
-    fmt.Println("La touche 'a' a été pressée.")
+func actionP() {
+    fmt.Println("La touche 'p' à été pressée.")
     
     grass()
 }
-
-func actionB() {
-    fmt.Println("La touche 'b' a été pressée.")
-    // Insérez ici le code à exécuter lorsque la touche 'b' est pressée.
+// switch case permettant d accéder à nos différentes fonctions
+func actionS() {
+    fmt.Println("La touche 's' à été pressée.")
+    
 	mer()
 }
 
 func actionC() {
-    fmt.Println("La touche 'c' a été pressée.")
-    // Insérez ici le code à exécuter lorsque la touche 'c' est pressée.
+    fmt.Println("La touche 'c' à été pressée.")
+    
     jeu()
 }
 func actionD() {
-    fmt.Println("la touche 'd' a été pressée")
+    fmt.Println("la touche 'd' à été pressée")
     Invent()
 }
 func actionE(){
-    fmt.Println("la touche e a été pressée")
+    fmt.Println("la touche e à été pressée")
     creation()
 }
 func actionF() {
-    fmt.Println("la touche f a été pressé")
+    fmt.Println("la touche f à été pressé")
     forge()
 }
 func actionG() {
-	fmt.Println("la touche g a été pressé")
+	fmt.Println("la touche g à été pressé")
 	main()
 }
 func actionH() {
-	fmt.Println("la touche h a été pressé")
+	fmt.Println("la touche h à été pressé")
 	return}
-func actionI() {
+func actionB() {
     fmt.Println("bienvenu sur notre cours en terre battue")
     clay()
 }
-func actionJ() {
+func actionW() {
     fmt.Println("bienvenu sur notre cours magic")
     magic()
 }
 func game() {
 
-	
+    fmt.Println( "c pour acceder à la carte ")
 
-    fmt.Println( "a permet de jouer ")
-    fmt.Println( "b pour acceder a Ynovshop ")
-    fmt.Println( "c pour acceder a la carte ")
-    fmt.Println( "d pour acceder a son inventaire ")
+    fmt.Println( "d pour acceder à son inventaire ")
+
     fmt.Println( "e pour créer son personnage ")
-    fmt.Println( "f pour acceder a la forge ")
+
     fmt.Println( "g pour retourner en arrière ")
-	fmt.Println("h pour retourner au menu")
-    fmt.Println("i pour le level 2")
-    fmt.Println("j pour le level 3")
+
+	fmt.Println( "h pour retourner au menu")
+  
+   
     
 
     var keyPressed string
@@ -73,10 +72,10 @@ func game() {
     }
 
     switch keyPressed {
-    case "a":
-        actionA()
-    case "b":
-        actionB()
+    case "p":
+        actionP()
+    case "s":
+        actionS()
     case "c":
         actionC()
     case "d":
@@ -89,10 +88,10 @@ func game() {
 		actionG()
 	case "h":
 		actionH()
-    case "i":
-        actionI()
-    case "j":
-        actionJ()
+    case "b":
+        actionB()
+    case "w":
+        actionW()
     
     default:
         fmt.Println("Touche non reconnue.")

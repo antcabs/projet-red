@@ -60,7 +60,7 @@ var (
 	jetTexture = rl.LoadTexture("jetpack.png")
 	
 	showMenu = false
-	playerSpeed float32 = 0.6
+	playerSpeed float32 = 0.85
 
 	musicPause bool
 	music rl.Music
@@ -71,7 +71,7 @@ var (
 
 
 
-
+//initialisation de notre personnage map et positionnement
 
 
 func drawScene() {
@@ -98,6 +98,7 @@ func drawScene() {
 
 }
 
+//permet de faire bouger notre personnage
 
 func imput() {
 
@@ -138,6 +139,7 @@ func imput() {
 
 
 }
+
 func update() {
 	running = !rl.WindowShouldClose()
 
@@ -251,11 +253,11 @@ func loadMap(mapFile string) {
 
 }
 func init() {
-	rl.InitWindow(screenWidth, screeHeight, "Ynovten")
+	rl.InitWindow(screenWidth, screeHeight, "Ynovten") //initialisation de notre carte personnage et son
 	rl.SetExitKey(0)
 	rl.SetTargetFPS(60)
 
-	grassSprite = rl.LoadTexture("Tilesets/Termap.png")
+	grassSprite = rl.LoadTexture("Tilesets/CARTEFINALE.png")
 
 	tileDest = rl.NewRectangle(0, 0, 16, 16)
 	tileSrc =  rl.NewRectangle(0, 0, 16, 16)
@@ -267,7 +269,7 @@ func init() {
 	playerSprite =rl.LoadTexture("Characters/Character.png")
 
 	playerSrc = rl.NewRectangle(0, 0, 48, 48)
-	playerDest = rl.NewRectangle(420, 1410, 40, 40)
+	playerDest = rl.NewRectangle(2000, 600, 40, 40)
 
 	rl.InitAudioDevice()
 	music = rl.LoadMusicStream("res/MUSICGAME.mp3")
