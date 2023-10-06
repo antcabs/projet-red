@@ -12,8 +12,8 @@ import (
 )
 
 const (
-	screenWidth = 1000
-	screeHeight = 600
+	screenWidth = 1800
+	screeHeight = 900
 	screen2Width = 800
 	screen2Height = 400
 )
@@ -60,7 +60,7 @@ var (
 	jetTexture = rl.LoadTexture("jetpack.png")
 	
 	showMenu = false
-	playerSpeed float32 = 2
+	playerSpeed float32 = 0.6
 
 	musicPause bool
 	music rl.Music
@@ -255,19 +255,19 @@ func init() {
 	rl.SetExitKey(0)
 	rl.SetTargetFPS(60)
 
-	grassSprite = rl.LoadTexture("res/Tilesets/Termap.png")
+	grassSprite = rl.LoadTexture("Tilesets/Termap.png")
 
 	tileDest = rl.NewRectangle(0, 0, 16, 16)
 	tileSrc =  rl.NewRectangle(0, 0, 16, 16)
 
-	workshopSprite = rl.LoadTexture("res/Characters/workshop.png")
+	workshopSprite = rl.LoadTexture("Characters/workshop.png")
 	workshopPosition = rl.NewVector2(1610, 1330)
 	
 
-	playerSprite =rl.LoadTexture("res/Characters/Character.png")
+	playerSprite =rl.LoadTexture("Characters/Character.png")
 
 	playerSrc = rl.NewRectangle(0, 0, 48, 48)
-	playerDest = rl.NewRectangle(200, 200, 60, 60)
+	playerDest = rl.NewRectangle(420, 1410, 30, 30)
 
 	rl.InitAudioDevice()
 	music = rl.LoadMusicStream("res/MUSICGAME.mp3")
@@ -276,7 +276,7 @@ func init() {
 
 	cam = rl.NewCamera2D(rl.NewVector2(float32(screenWidth/2), float32(screeHeight/2)), rl.NewVector2(float32(playerDest.X-(playerDest.Width/2)), float32(playerDest.Y-(playerDest.Height/2))), 0.0, 1.0)
 
-	cam.Zoom = 0.7
+	cam.Zoom = 3
 
 }
 
