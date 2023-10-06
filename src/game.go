@@ -267,7 +267,7 @@ func init() {
 	playerSprite =rl.LoadTexture("Characters/Character.png")
 
 	playerSrc = rl.NewRectangle(0, 0, 48, 48)
-	playerDest = rl.NewRectangle(420, 1410, 30, 30)
+	playerDest = rl.NewRectangle(420, 1410, 40, 40)
 
 	rl.InitAudioDevice()
 	music = rl.LoadMusicStream("res/MUSICGAME.mp3")
