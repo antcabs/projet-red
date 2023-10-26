@@ -51,6 +51,11 @@ func actionW() {
 func game() {
 
     fmt.Println( "c pour acceder à la carte ")
+    fmt.Println( "p pour acceder au premier niveau" )
+    fmt.Println( "s pour acceder a Ynovshop")
+    fmt.Println( "f pour acceder à la forge")
+    fmt.Println( "b pour acceder au second niveau")
+    fmt.Println( "w pour acceder au troisieme niveau")
 
     fmt.Println( "d pour acceder à son inventaire ")
 
